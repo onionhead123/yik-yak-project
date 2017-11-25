@@ -1,1 +1,37 @@
-html code here
+<!DOCTYPE html>
+<html>
+<head>
+<title>Yik Yak</title>
+</head>
+
+<body>
+
+<h1>Yik Yak - Leave your message here.</h1>
+<p>Time for you to leave your mark.</p>
+
+
+<form action="/my-handling-form-page" method="post">
+	<div>
+        <label for="name">Name (completely optional):</label>
+        <input type="text" id="name" name="user_name">
+    </div>
+    
+    <div>
+        <label for="mail">E-mail:</label>
+        <input type="email" id="mail" name="user_mail">
+    </div>
+    
+    <div>
+        <label for="msg">Message:</label>
+        <textarea id="msg" name="user_message"></textarea>
+    </div>
+    
+    <div class="button">
+    	<button type="submit">Send<button/>
+    </div>
+</form>
+
+</body>
+</html>
+
+
