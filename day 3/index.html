@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>Yik Yak</title>
+  <script type="text/javascript" src="app1.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="style.css"></link>
+</head>
+
+
+<body>
+
+<h1>Yik Yak - Leave your message here.</h1>
+<p>Time for you to leave your mark.</p>
+
+<form method="get" action="@">
+	  <div>
+        <label id="label.input.name">Name (optional):</label>
+        <input type="text" id="name" name="user_name" placeholder="type your name">
+    </div>
+
+    <div>
+        <label id="label.input.message">Message:</label>
+        <textarea id="msg" name="user_message" placeholder="type your message"></textarea>
+    </div>
+
+    <div class="button" onclick=showMessage() value="button">
+    	<button type="button">Post</button>
+    </div>
+</form>
+
+
+<h2 id="feed">Messages feed: </h2> <br>
+<!-- req.checkBody('age', 'Invalid age').notEmpty()--> <!--for checking whether message has text or not-->
+<div id="container">
+    No messages right now!
+</div>
+
+  <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyDOtuJuIdo4SBVJ3gLZALtXnCMHM48_EZo",
+      authDomain: "project-51d67.firebaseapp.com",
+      databaseURL: "https://project-51d67.firebaseio.com",
+      projectId: "project-51d67",
+      storageBucket: "project-51d67.appspot.com",
+      messagingSenderId: "551926591027"
+    };
+    firebase.initializeApp(config);
+  </script>
+</body>
+</html>
