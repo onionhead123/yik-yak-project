@@ -1,7 +1,13 @@
+var firebaseRef = firebase.database().ref().child("messagesSent"); //create ref to location folder on firebase called messagesSent
+firebaseRef.on("child_added", snap => {
+  var userData = snap.val();
+  $("#container").append("<p>" + userData + "</p>");
+
+  //  console.log(post.append("<p>" + userData + "</p>"))
+});
 function showMessage(){
-
-
-//var post = document.getElementById("container").value;
+  var userInput = document.getElementById("msg").value;
+  firebaseRef.push().set(userInput);
 //  post.innerHTML = (`${message}`); //< post initital msg>
 //^^ replace the container with message
 //  var para = document.createElement("p");
@@ -9,18 +15,16 @@ function showMessage(){
 //    para.appendChild(string);
 //^^ also put the message into a variable(textnode) that will attach to post
   //  post.appendChild(para); <append the message/string to post
-  //message.innerHTML = (`${post}`);
+  //message.innerHTML = (`${post}`); <put the "post" into "message" variable
   //PUSH DATA to Firebase
-  var firebaseRef = firebase.database().ref().child("messagesSent"); //create ref to location folder on firebase called messagesSent
-  var userInput = document.getElementById("msg").value;
-  firebaseRef.push().set(userInput);
+
+//  var post = document.getElementById("container").value;
+  document.getElementById("msg").reset();
+  //push userInput to FIREBASE/messagesSent
+
+}
 
 
-    //PULL DATA FROM FIREBASE to WEBPAGE
+  //PULL DATA FROM FIREBASE to WEBPAGE
 
-
-  var rootRef = firebase.database().ref().child("messagesSent");
-    rootRef.on("child_added", snap => {
-      var data = snap.val();
-      $("#userInput").append("<p>"+data+"</p>");
- };
+    //  post.innerHTML = (`${userInput}`);
