@@ -15,12 +15,12 @@ function showMessage(){
   var userInput = document.getElementById("msg").value;
   firebaseRef.push().set(userInput);
 
-}
-    //GET DATA TO THE FIREBASE
+
+    //PULL DATA FROM FIREBASE to WEBPAGE
 
 
   var rootRef = firebase.database().ref().child("messagesSent");
     rootRef.on("child_added", snap => {
       var data = snap.val();
-      $("#container").append("<p>"+data+"</p>");
-//    });
+      $("#userInput").append("<p>"+data+"</p>");
+ };
