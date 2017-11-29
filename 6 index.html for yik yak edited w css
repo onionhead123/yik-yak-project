@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Yik Yak</title>
+  <script type="text/javascript" src="app.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css"></link>
+</head>
+
+
+<body>
+<h1>Yik Yak - Leave your message here.</h1>
+<p>Time for you to leave your mark.</p>
+
+
+<form action="\Users\jenny\Desktop\Startup Summer\yik-yak-project\app.js" method="post">
+	  <div>
+        <label for="name">Name (optional):</label>
+        <input type="text" id="user" name="user_name" placeholder="type your name">
+    </div>
+
+    <div>
+        <label for="msg">Message:</label>
+        <textarea id="msg" name="user_message" placeholder="type your message"></textarea>
+    </div>
+
+<!--    <div class="button" onclick=showMessage() value="button">
+    	<button type="submit">Post</button>
+    </div> -->
+
+<button type="button"
+onclick='document.getElementById("msg").innerHTML = msg'>Submit</button>
+
+
+</form>
+<!-- req.checkBody('age', 'Invalid age').notEmpty()--> <!--for checking whether message has text or not-->
+</body>
+
+
+
+</html>

@@ -1,27 +1,35 @@
 function showMessage(){
 
   var message = document.getElementById("msg").value;
-    console.log(`${message}`);
-  var post = document.getElementById("container");
-  //post.innerHTML = (`${message}`); //< post initital msg>
+  var post = document.getElementById("container").value;
+  post.appendChild(`${message}`);
 
-  var para = document.createElement("p");
-  var string = document.createTextNode(message);
-    para.appendChild(string);
-  //console.log the above function
-    post.appendChild(para);
-  message.innerHTML = (`${post}`);
+  post.innerHTML = (`${message}`); //< switch "container" with "msg" value>
+
+//  post.appendChild(para);
+
+//  var string = document.createTextNode(message);
+//  para.appendChild(string);
+
+
+//  message.innerHTML = (`${post}`);
+
+
   //PUSH DATA to Firebase
   var firebaseRef = firebase.database().ref().child("msg");
-  firebaseRef.push().set(msg.value);
-    //GET DATA TO THE FIREBASE
-  var rootRef = firebase.database().ref().child("msg");
-  rootRef.on("child_added", snap => {
-    alert(snap.val());
-      document.msg.reset();
+  firebaseRef.push().set(message);
+  console.log(firebaseRef.push().set(message));
+}
 
-    var rootMessage = snap.child();
-  });
+//Retreive data from firebase
+  //$(document).ready(function(){
+//  var rootRef = firebase.database().ref().child("msg");
+//  rootRef.on("child_added", snap => {
+//    var name = snap.val();
+//    $("#container").append("<p>" + name + "</p>");
+
+//  });
+//});
 
 
   // Read from the database
@@ -40,5 +48,3 @@ function showMessage(){
           //Log.w(TAG, "Failed to read value.", error.toException());
       //}
   //});
-
-}
