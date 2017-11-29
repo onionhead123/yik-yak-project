@@ -1,7 +1,11 @@
+console.log(firebase)
 var firebaseRef = firebase.database().ref().child("messagesSent"); //create ref to location folder on firebase called messagesSent
 firebaseRef.on("child_added", snap => {
+  let test = " another part of the string";
+  let string = "here is my string value"+"test";
+
   var userData = snap.val();
-  $("#container").append("<p>" + userData + "</p>");
+  $("#container").append("<p class=\"messageData\">" + userData + "</p>");
 
   //  console.log(post.append("<p>" + userData + "</p>"))
 });
@@ -19,7 +23,8 @@ function showMessage(){
   //PUSH DATA to Firebase
 
 //  var post = document.getElementById("container").value;
-  document.getElementById("msg").reset();
+console.log(document.getElementById("msg"))
+  document.getElementById("msg").value = '';
   //push userInput to FIREBASE/messagesSent
 
 }
